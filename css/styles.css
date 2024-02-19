@@ -1,3 +1,10 @@
+/* CUSTOM PROPS */
+:root {
+  --primary-color:#35b8be;
+  --black:#08090a;
+  --text-color:#546285;
+
+}
 /* GLOBAL STYLES */
 
 html {
@@ -18,11 +25,11 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
-  font-size: 16px;
+  font-family: 'Inter', "Arial", sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   background-color: #fff;
-  color: #222;
+  color: var(--text-color);
 }
 
 img {
@@ -72,7 +79,7 @@ select:-webkit-autofill:focus {
 
 .container {
   width: 100%;
-  max-width: 1200;
+  max-width: 1200px;
   padding-left: 50px;
   padding-right: 50px;
   margin-left: auto;
