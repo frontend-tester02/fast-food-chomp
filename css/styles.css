@@ -404,6 +404,69 @@ select:-webkit-autofill:focus {
   object-fit: contain;
 }
 
+/* HOW-IT-WORKS */
+.how-it-works {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+
+.how-it-works__title {
+  margin-top: 0;
+  margin-bottom: 60px;
+  font-size: 55px;
+  line-height: 1;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.how-it-works__list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.how-ite-works__item {
+  position: relative;
+  width: 100%;
+  max-width: 333px;
+  text-align: center;
+}
+
+.how-ite-works__item:not(:last-child) {
+  margin-right: 100px;
+}
+
+.how-ite-works__item:not(:last-child)::after {
+  position: absolute;
+  top: 150px;
+  right: -100px;
+  width: 100px;
+  height: 1px;
+  background-color: red;
+  content: "";
+}
+
+.how-it-works-img {
+  width: 333px;
+  height: 267px;
+  margin-bottom: 40px;
+  object-fit: contain;
+}
+
+.how-it-works__item-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: var(--black);
+}
+
+.how-it-works__item-text {
+  margin: 0;
+}
+
 
 
 
@@ -484,12 +547,29 @@ select:-webkit-autofill:focus {
     margin-right: 0;
   }
 
+  .how-it-works__list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .how-ite-works__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 150px;
+  }
+
+
+  .how-ite-works__item:not(:last-child)::after {
+    left: 50%;
+    top: 470px;
+    width: 1px;
+    height: 100px;
+  }
 
 
 }
 
 @media only screen and (max-width:530px) {
-  .site-header__container, .hero__container, .about-us__container {
+  .site-header__container, .hero__container, .about-us__container, .how-it-works__contrainer {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -508,6 +588,8 @@ select:-webkit-autofill:focus {
     width: 100%;
     height: 100%;
   }
+
+
 }
 
 @media only screen and (max-width:400px) {
@@ -522,5 +604,9 @@ select:-webkit-autofill:focus {
   .about-us {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+
+  .how-ite-works__item:nth-child(even)::after {
+    top: 520px;
   }
 }
