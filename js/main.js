@@ -42,3 +42,45 @@ document.addEventListener('keydown', (e) => {
     addHidden()
   }
 })
+
+
+
+// OUR-MENU-BTNS
+
+const ourMenuBtns = document.querySelectorAll('.our-menu__tabs-btn');
+const ourBtnsItem = document.querySelectorAll('.our-menu__tabs-item')
+const ourMenuListWrapper = document.querySelectorAll('.our-menu__list-wrapper');
+
+function deactiveMenuBtnItems () {
+  ourBtnsItem.forEach((item) => {
+    item.classList.remove('our-menu__tabs-btn--active')
+  })
+}
+
+function deactiveMenuList() {
+  ourMenuListWrapper.forEach((listItem) => {
+    listItem.classList.remove('our-menu__list-wrapper--active')
+  })
+}
+
+ourMenuBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    // Prevent page move
+    e.preventDefault()
+
+    // Remove active class from menu btn items
+    deactiveMenuBtnItems()
+
+
+    // Add active class to current btn items
+    btn.parentElement.classList.add('our-menu__tabs-btn--active')
+
+    // Remove active class from our menu list
+    deactiveMenuList()
+
+
+    // Show our menu list
+    const elMenuListTarget = document.querySelector(btn.dataset.tabTarget);
+    elMenuListTarget.classList.add('our-menu__list-wrapper--active')
+  })
+})
