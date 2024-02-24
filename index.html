@@ -483,9 +483,34 @@
     </div>
 
     <div class="cart-modal__body">
-      <p class="cart-modal__text">We couldn't find any items in your cart.</p>
-      <a href="#" class="cart-modal__link">Start an Order</a>
-      <img class="cart-modal__img" src="img/cart-btn-img.svg" alt="Cart modal btn imagw" width="86" height="53">
+      <div class="cart-modal__info">
+        <p class="cart-modal__text">We couldn't find any items in your cart.</p>
+        <a href="#" class="cart-modal__link">Start an Order</a>
+        <img class="cart-modal__img" src="img/cart-btn-img.svg" alt="Cart modal btn imagw" width="86" height="53">
+      </div>
+
+      <div class="cart-modal__list-wrapper">
+        <div class="cart-modal__list cart cart--active">
+          <div class="cart__item">
+            <img class="cart__item-img" src="img/burger-dreams.png" alt="Burger Dreams" width="60" height="60">
+              <div class="cart__item-info">
+                <h3 class="cart__item-title">Burger Dreams</h3>
+                <p class="cart__item-price">$ 9.20 USD</p>
+                <button type="button" class="cart__item-remove">Remove</button>
+              </div>
+              <form action="#" class="cart__form">
+                <input type="number" class="cart__input" value="1" aria-label="Input">
+              </form>
+          </div>
+        </div>
+        <div class="cart-modal__total price">
+          <div class="price__subtotal">
+            <h3 class="price__subtotal-title">Subtotal</h3>
+            <p class="price__subtotal-num">$ 9.20 USD</p>
+          </div>
+          <button type="button" class="price__subtotal-btn">Continue to Checkout</button>
+        </div>
+      </div>
     </div>
   </div>
 
