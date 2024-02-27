@@ -246,6 +246,7 @@ function updateMainCartPrice() {
 
     total = total + (mainPrice * mainQuantity)
     total = Math.round(total * 100) / 100
-
   }
+
+
 }
