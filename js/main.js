@@ -61,6 +61,14 @@ const ourMenuBtns = document.querySelectorAll('.our-menu__tabs-btn');
 const ourBtnsItem = document.querySelectorAll('.our-menu__tabs-item')
 const ourMenuListWrapper = document.querySelectorAll('.our-menu__list-wrapper');
 
+// Full menu
+const fullMenuInner = document.querySelectorAll('.our-menu__full-inner')
+const ourMenuFullNext = document.querySelector('.our-menu__next-btn')
+const ourMenuFullPrev = document.querySelector('.our-menu__previous-btn')
+const fullBtn = document.querySelectorAll('.full-btn')
+
+
+
 function deactiveMenuBtnItems () {
   ourBtnsItem.forEach((item) => {
     item.classList.remove('our-menu__tabs-btn--active')
@@ -70,6 +78,12 @@ function deactiveMenuBtnItems () {
 function deactiveMenuList() {
   ourMenuListWrapper.forEach((listItem) => {
     listItem.classList.remove('our-menu__list-wrapper--active')
+  })
+}
+
+function deactiveFullMenu() {
+  fullMenuInner.forEach((item) => {
+    item.classList.toggle('our-menu__full-inner--active')
   })
 }
 
@@ -94,6 +108,17 @@ ourMenuBtns.forEach((btn) => {
     elMenuListTarget.classList.add('our-menu__list-wrapper--active')
   });
 });
+
+
+ourMenuFullNext.addEventListener('click', (e) => {
+  e.preventDefault()
+  deactiveFullMenu()
+})
+
+ourMenuFullPrev.addEventListener('click', (e) => {
+  e.preventDefault()
+  deactiveFullMenu()
+})
 
 // CART-COUNT
 
@@ -183,6 +208,7 @@ function addItemToCart(title, price, imageSrc) {
     }
   }
 
+
   let cartRowContents = `
         <img class="cart__item-img" src="${imageSrc}" alt="Burger Dreams" width="60" height="60">
           <div class="cart__item-info">
@@ -199,6 +225,8 @@ function addItemToCart(title, price, imageSrc) {
   cartItems.append(cartRow);
   cartRow.getElementsByClassName('cart__item-remove')[0].addEventListener('click', removeCartItem)
   cartRow.getElementsByClassName('cart__input')[0].addEventListener('change', qauntityChanged)
+
+  alert('Product added to modal cart')
 }
 
 
