@@ -100,6 +100,7 @@ select:-webkit-autofill:focus {
   color: #fff;
   text-align: center;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .primary-button {
@@ -317,6 +318,7 @@ select:-webkit-autofill:focus {
 
 .cart__item {
   display: flex;
+  flex-grow: 1;
   align-items: center;
 }
 
@@ -824,6 +826,57 @@ select:-webkit-autofill:focus {
 }
 
 
+/* SUPPORT */
+.support {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.support__container {
+  display: flex;
+  align-items: center;
+}
+
+.support__img {
+  width: 600px;
+  height: 640px;
+  margin-right: 25px;
+  object-fit: contain;
+}
+
+.support__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 103px 60px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  background-image: url(../img/cta-bg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.support__title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 55px;
+  line-height: 1;
+}
+
+.dark-span {
+  color: #1b9097;
+}
+
+.support__btn {
+  background-color: #fff;
+  color: var(--primary-color);
+  text-decoration: none;
+
+}
+
+
 
 
 @media only screen and (max-width:1300px) {
@@ -959,6 +1012,21 @@ select:-webkit-autofill:focus {
     text-align: center;
   }
 
+  .support__container {
+    flex-direction: column;
+  }
+
+  .support__img {
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+
+  .support__title {
+    margin-bottom: 30px;
+  }
 
 }
 
@@ -1043,7 +1111,9 @@ select:-webkit-autofill:focus {
 }
 
 @media only screen and (max-width:530px) {
-  .site-header__container, .hero__container, .about-us__container, .how-it-works__contrainer, .our-menu__container, .takeaway__container {
+  .site-header__container, .hero__container,
+  .about-us__container, .how-it-works__contrainer,
+  .our-menu__container, .takeaway__container, .support__container{
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1109,6 +1179,11 @@ select:-webkit-autofill:focus {
 
   .takeaway__title {
     font-size: 48px;
+  }
+
+  .support__title {
+    font-size: 40px;
+    margin-bottom: 30px;
   }
 }
 
