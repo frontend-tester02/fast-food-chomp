@@ -61,14 +61,6 @@ const ourMenuBtns = document.querySelectorAll('.our-menu__tabs-btn');
 const ourBtnsItem = document.querySelectorAll('.our-menu__tabs-item')
 const ourMenuListWrapper = document.querySelectorAll('.our-menu__list-wrapper');
 
-// Full menu
-const fullMenuInner = document.querySelectorAll('.our-menu__full-inner')
-const ourMenuFullNext = document.querySelector('.our-menu__next-btn')
-const ourMenuFullPrev = document.querySelector('.our-menu__previous-btn')
-const fullBtn = document.querySelectorAll('.full-btn')
-
-
-
 function deactiveMenuBtnItems () {
   ourBtnsItem.forEach((item) => {
     item.classList.remove('our-menu__tabs-btn--active')
@@ -78,12 +70,6 @@ function deactiveMenuBtnItems () {
 function deactiveMenuList() {
   ourMenuListWrapper.forEach((listItem) => {
     listItem.classList.remove('our-menu__list-wrapper--active')
-  })
-}
-
-function deactiveFullMenu() {
-  fullMenuInner.forEach((item) => {
-    item.classList.toggle('our-menu__full-inner--active')
   })
 }
 
@@ -110,15 +96,7 @@ ourMenuBtns.forEach((btn) => {
 });
 
 
-ourMenuFullNext.addEventListener('click', (e) => {
-  e.preventDefault()
-  deactiveFullMenu()
-})
 
-ourMenuFullPrev.addEventListener('click', (e) => {
-  e.preventDefault()
-  deactiveFullMenu()
-})
 
 // CART-COUNT
 
@@ -230,13 +208,9 @@ function addItemToCart(title, price, imageSrc) {
 }
 
 
-
-
-
 // UPDATE MODAL PRICE
 
 function updateCartTotal() {
-  // let cartItemWrapper = document.querySelectorAll('.our-menu__list')
   let cartRows = document.querySelectorAll('.cart__item')
   let total = 0
 
@@ -275,6 +249,73 @@ function updateMainCartPrice() {
     total = total + (mainPrice * mainQuantity)
     total = Math.round(total * 100) / 100
   }
-
-
 }
+
+// FAQ
+
+const faqBtns = document.querySelectorAll('.faq__btn');
+const faqItem = document.querySelectorAll('.faq__btn-item')
+const faqListWrapper = document.querySelectorAll('.faq__list-wrapper');
+
+
+function deactiveFaqItem() {
+  faqItem.forEach((item) => {
+    item.classList.remove('faq__item--active')
+  })
+}
+
+function deactiveFaqList() {
+  faqListWrapper.forEach((faqList) => {
+    faqList.classList.remove('faq__list-wrapper--active')
+  })
+}
+
+faqBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    deactiveFaqItem()
+
+    btn.parentElement.classList.add('faq__item--active')
+
+    deactiveFaqList()
+
+    const elFaqTargetList = document.querySelector(btn.dataset.faqTarget)
+    elFaqTargetList.classList.add('faq__list-wrapper--active')
+
+
+  })
+})
+
+const faqOpen = document.querySelectorAll('.faq__item-open')
+const faqItemDescr = document.querySelectorAll('.faq__item-descr')
+
+faqOpen.forEach((item) => {
+  item.addEventListener('click', () => {
+    item.parentElement.nextElementSibling.classList.toggle('faq__item-descr--active')
+  })
+});
+
+
+
+// Full menu
+const fullMenuInner = document.querySelectorAll('.our-menu__full-inner')
+const ourMenuFullNext = document.querySelector('.our-menu__next-btn')
+const ourMenuFullPrev = document.querySelector('.our-menu__previous-btn')
+const fullBtn = document.querySelectorAll('.full-btn')
+
+function deactiveFullMenu() {
+  fullMenuInner.forEach((item) => {
+    item.classList.toggle('our-menu__full-inner--active')
+  })
+}
+
+ourMenuFullNext.addEventListener('click', (e) => {
+  e.preventDefault()
+  deactiveFullMenu()
+})
+
+ourMenuFullPrev.addEventListener('click', (e) => {
+  e.preventDefault()
+  deactiveFullMenu()
+})
